@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ScrollPane?>
+<?import com.gluonhq.charm.glisten.mvc.View?>
+
+<View fx:id="api" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-Infinity" prefWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.views.MenuController">
+   <ScrollPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" fitToHeight="true" fitToWidth="true" prefHeight="-Infinity" prefWidth="-Infinity">
+<AnchorPane fx:id="parent" maxHeight="1.7976931348623157E308" maxWidth="300.0" minHeight="900.0" minWidth="300.0" prefHeight="1000.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <TilePane fx:id="TilePane" alignment="CENTER" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="1000.0" prefWidth="300.0" tileAlignment="CENTER_LEFT" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" prefHeight="70.0" prefWidth="250.0" text="Add SellerAccount" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="profile" fitHeight="63.0" fitWidth="79.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Controller/Views/icons/PikPng.com_orang-png_5154752.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="label_commerce" prefHeight="70.0" prefWidth="250.0" text="E-commerce " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Controller/Views/icons/PikPng.com_e-commerce-png_2804307.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Button fx:id="Scrapping" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" text="Scrapping">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Controller/Views/icons/PikPng.com_scrape-png_4132362.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="GETRequest" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" text="GET Request">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Controller/Views/icons/PikPng.com_tech-circle-png_4864338.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="DBMS" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" text="DBMS">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Controller/Views/icons/PikPng.com_oracle-png_1411923.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="dashBoard" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" text="Analysis">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Controller/Views/icons/PikPng.com_cell-phone-icon-png_1188611.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="item" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" text="Products">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Controller/Views/icons/PikPng.com_electronics-items-png_891664.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="settings" contentDisplay="TOP" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" text="Setting Properties">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Controller/Views/icons/PikPng.com_settings-gear-png_4940060.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TilePane>
+   </children>
+</AnchorPane>
+   </ScrollPane>
+</View>

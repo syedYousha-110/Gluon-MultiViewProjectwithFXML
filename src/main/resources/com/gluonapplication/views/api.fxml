@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.scene.control.ScrollPane?>
+<View fx:id="api"  maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-Infinity" prefWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.views.ApiPresenter">
+         <ScrollPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" fitToHeight="true" fitToWidth="true" prefHeight="-Infinity" prefWidth="-Infinity">
+    <AnchorPane maxHeight="Infinity" maxWidth="1280.0" minHeight="900.0" minWidth="1280.0" prefHeight="1000.0" prefWidth="1280.0">
+      <VBox fx:id="fieldsContainer" prefHeight="200.0" prefWidth="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <HBox>
+               <children>
+                  <FlowPane columnHalignment="RIGHT" hgap="10.0" orientation="VERTICAL" rowValignment="TOP">
+                     <children>
+                        <GridPane prefHeight="90.0" prefWidth="849.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="101.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="748.0" minWidth="10.0" prefWidth="748.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField fx:id="ApiUrlText" prefHeight="30.0" prefWidth="750.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="ApikeyText" prefHeight="30.0" prefWidth="525.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label prefHeight="35.0" prefWidth="100.0" text="USER NAME   :-" />
+                              <Label prefHeight="35.0" prefWidth="100.0" text="USER API KEY  :-" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Line endX="82.0" endY="17.0" startX="82.0" startY="-70.0" />
+                        <GridPane prefHeight="88.0" prefWidth="145.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="execute" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" text="Execute" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <ChoiceBox fx:id="actionsBox" prefHeight="35.0" prefWidth="145.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </FlowPane>
+               </children>
+            </HBox>
+            <HBox fx:id="ActionParameterHbox" alignment="CENTER" prefHeight="100.0" prefWidth="863.0">
+               <children>
+                  <FlowPane alignment="BOTTOM_LEFT">
+                     <children>
+                        <GridPane fx:id="gridTextField">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField fx:id="Limit" promptText="Limit">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="OffSet" promptText="OffSet" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="CENTER">
+                     <children>
+                        <Label fx:id="TableLabel" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="CENTER_RIGHT">
+                     <children>
+                        <GridPane fx:id="ButtonGridNP" prefHeight="64.0" prefWidth="125.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="63.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="64.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="btn_next" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="---&gt;" GridPane.columnIndex="1" />
+                              <Button fx:id="btn_previous" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="&lt;---" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </FlowPane>
+               </children>
+            </HBox>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="863.0" spacing="10.0">
+               <children>
+                  <VBox fx:id="tableVboxContainer" minHeight="473.0" minWidth="800.0" prefHeight="612.0" prefWidth="863.0">
+                     <children>
+                        <TableView fx:id="table_View" prefHeight="476.0" prefWidth="863.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <StackPane fx:id="stackPane" alignment="TOP_LEFT" layoutX="916.0" layoutY="100.0" prefHeight="35.0" prefWidth="350.0" AnchorPane.bottomAnchor="855.0" AnchorPane.leftAnchor="916.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="160.0">
+         <children>
+            <HBox prefHeight="0.0" prefWidth="344.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="50.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../com/gluonapplication/views/icons/search-icon-image-1.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="search_query" prefHeight="35.0" prefWidth="335.0" />
+               </children>
+            </HBox>
+         </children></StackPane>
+      <VBox fx:id="responseTableContainer" layoutX="953.0" layoutY="145.0" prefHeight="639.0" prefWidth="315.0" AnchorPane.bottomAnchor="161.0" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="200.0" />
+      <FlowPane layoutX="50.0" layoutY="785.0" prefHeight="72.0" prefWidth="285.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="50.0">
+         <children>
+            <GridPane fx:id="ButtonGridView" prefHeight="50.0" prefWidth="344.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="425.0" minWidth="10.0" prefWidth="187.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="713.0" minWidth="10.0" prefWidth="180.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btn_clear" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="btn_LoadData" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="LoadData" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </FlowPane>
+      <VBox prefHeight="200.0" prefWidth="100.0" />
+     </AnchorPane>
+         </ScrollPane>
+</View>

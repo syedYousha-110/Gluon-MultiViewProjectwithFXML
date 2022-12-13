@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.scene.control.ScrollPane?>
+<View fx:id="scrapping" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-Infinity" prefWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gluonapplication.views.ScrappingPresenter">
+   <ScrollPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" fitToHeight="true" fitToWidth="true" prefHeight="-Infinity" prefWidth="-Infinity">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1280.0" minHeight="900.0" minWidth="1280.0" prefHeight="1000.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox maxHeight="1080.0" minHeight="900.0" prefHeight="1000.0" prefWidth="1800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="150.0" prefWidth="1800.0">
+               <children>
+                  <Pane prefHeight="132.0" prefWidth="1800.0">
+                     <children>
+                        <TextField fx:id="text_url" layoutX="157.0" layoutY="14.0" prefHeight="35.0" prefWidth="767.0" promptText="https://www.etsy.com/" />
+                        <Label layoutX="65.0" layoutY="14.0" prefHeight="35.0" prefWidth="85.0" text="Enter the URL" />
+                        <Button fx:id="btn_execute" layoutX="790.0" layoutY="57.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Execute" />
+                        <Label layoutX="65.0" layoutY="58.0" prefHeight="35.0" prefWidth="85.0" text="Tages" />
+                        <TextField fx:id="txt_pages" layoutX="157.0" layoutY="60.0" prefHeight="35.0" prefWidth="320.0" promptText="Tages">
+                           <font>
+                              <Font name="Times New Roman Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="392.0" layoutY="110.0" prefHeight="25.0" prefWidth="159.0" text="JavaFX-Table">
+                           <font>
+                              <Font name="Times New Roman Italic" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="1.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="700.0" prefWidth="1800.0">
+               <children>
+                  <TableView fx:id="table_view" prefHeight="700.0" prefWidth="927.0" />
+                  <VBox fx:id="vbox_FieldRoot" prefHeight="200.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+            <HBox prefWidth="1800.0">
+               <children>
+                  <Button fx:id="btn_dataBase" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Enter Data" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
+   </ScrollPane>
+</View>

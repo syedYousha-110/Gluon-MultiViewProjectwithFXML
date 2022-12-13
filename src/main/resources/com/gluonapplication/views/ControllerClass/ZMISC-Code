@@ -1,0 +1,106 @@
+    private void editableCell(){
+        id.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setId(e.getNewValue()));
+        name_col.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setOwner(e.getNewValue().getValue()));
+        shop_col.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setShopName(e.getNewValue().getValue()));
+        email_col.setOnEditCommit(e -> e.getTableView().getItems().get(e.getTablePosition().getRow()).setEmail(e.getNewValue().getValue()));
+    }
+
+       Set<Node> nodes = DataTableUtil.getTableView().lookupAll(".scroll-bar");
+            for (Node node: nodes){
+                ScrollBar scrollBar = (ScrollBar) node;
+                if (scrollBar.getOrientation() == Orientation.VERTICAL){
+                    scrollBar.setPrefHeight(40);
+                }else if (scrollBar.getOrientation() == Orientation.HORIZONTAL){
+                    scrollBar.setPrefWidth(40);
+                }
+            }
+            TextBoxSearchEvent();
+
+            ObservableList<Node> nodes = ItemTableUtility.tableView.getChildrenUnmodifiable();
+                    for (final Node node : nodes) {
+                        if (node instanceof ScrollBar sb) {
+                            sb.setBackground(Background.fill(Color.GRAY));
+                            sb.setPrefHeight(25);
+                            sb.setPrefWidth(25);
+                        }
+                    }
+
+
+
+             // search_query.textProperty().addListener(c->textField.textProperty().get());
+              //search_query.textProperty().bind(textField.textProperty());
+      //        dataFilteredList = filteredList;
+      //        dataFilteredList = new FilteredList<>(newTableView.getItems(), setPredicateTo->true);
+      //        search_query.textProperty().addListener((observableValue, oldValue, newValue) -> dataFilteredList.setPredicate(data -> {
+      //            GetBrandsTableData data1 = (GetBrandsTableData) data.getInstance();
+      //            if (newValue.isEmpty()){
+      //                return true;
+      //            }
+      //                if (String.valueOf(data1.getBrandId()).toLowerCase().contains(newValue.toLowerCase())) {
+      //                    return true;
+      //                }else if (data1.getName().toLowerCase().contains(newValue.toLowerCase())){
+      //                    return true;
+      //                }else return data1.getGlobalIdentifier().toLowerCase().contains(newValue.toLowerCase());
+      //        }));
+
+      //        dataSortedList = new SortedList<>(dataFilteredList);
+      //
+      //        newTableView.setItems(dataSortedList);
+      //
+      //        dataSortedList.comparatorProperty().bind(newTableView.comparatorProperty());
+
+      @functionInAPI
+          private ApiModel getGetBrandsTableData() throws InterruptedException {
+              ObservableList<CustomProperty> collection = FXCollections.observableArrayList();
+                     GetBrands brands = new GetBrands(Format.JSON,GetBrands.getCurrentTimestamp(),"syanstore723@gmail.com", Constants.API_KEY.getKey(),"2000","1000");
+                      brands.start();
+              return brands;
+          }
+
+
+          private void backward(ActionEvent event){
+                  if (iterator.hasPrevious()) {
+                      newTableView = iteratorTable.previous().getTableView();
+                      customTableProperty = propertyListIterator.previous();
+          //            var text = customTableProperty.searchText(newTableView,dataSortedList);
+          //            TextBoxSearchEvent(text);
+                      tableVboxContainer.getChildren().set(tableIndex,newTableView);
+                      observableList = iterator.previous();
+                      // dataSortedList.comparatorProperty().unbind();
+                     // dataSortedList.comparatorProperty().bind(((TableView<CustomProperty>)tableVboxContainer.getChildren().get(tableIndex)).comparatorProperty());
+                      //dataSortedList.comparatorProperty().setValue(((TableView<CustomProperty>)tableVboxContainer.getChildren().get(tableIndex)).getComparator());
+
+                      btn_next.setDisable(false);
+                  }if (!iterator.hasPrevious() || iterator.previousIndex()==-1){
+                      newTableView = iteratorTable.next().getTableView();
+                      tableVboxContainer.getChildren().set(tableIndex,newTableView);
+                      observableList=iterator.next();
+                      customTableProperty = propertyListIterator.next();
+                      btn_previous.setDisable(true);
+                  }
+
+
+                      private void dragAndDrop(DragEvent event){
+                          Dragboard db = event.getDragboard();
+                          if (db.hasFiles()){
+                              List<ExcelModel> excelReaderList = new ArrayList<>();
+                              db.getFiles().forEach(x-> {
+                                  try {
+                                      excelReaderList.add(new ExcelModel(x));
+                                  } catch (IOException e) {
+                                      Logger.getLogger(ExcelTableModel.class.getName()).log(Level.SEVERE,null,e);
+                                      System.out.println("Line  248 class API");
+                                  }
+                              });
+                              for (ExcelModel excelReader: excelReaderList){
+                                  excelReader.loadExcelData();
+                                  observableList = FXCollections.observableArrayList(excelReader.getObservableList());
+                                  tableItemLists.add(excelReader.getObservableList());
+                              }
+                              iterator = tableItemLists.listIterator();
+                              observableList = tableItemLists.get(tableItemLists.size()-1);
+                              pointer();
+                              inputTableItems(observableList);
+                              btn_next.setDisable(true);
+                          }
+                      }
