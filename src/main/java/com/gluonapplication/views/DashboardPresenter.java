@@ -17,6 +17,7 @@ import javafx.scene.paint.Color;
 
 public class DashboardPresenter implements Initializable{
 
+    @FXML
     private AreaChart<String,Number> AreaChart;
     @FXML
     private AnchorPane chart_pane;

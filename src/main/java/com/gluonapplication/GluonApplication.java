@@ -2,7 +2,7 @@ package com.gluonapplication;
 
 
 import com.gluonapplication.views.ApiView;
-import com.gluonapplication.views.ScrappingView;
+import com.gluonapplication.views.PrimaryView;
 import com.gluonapplication.views.SecondaryView;
 import com.gluonhq.charm.glisten.application.AppManager;
 import com.gluonhq.charm.glisten.mvc.View;
@@ -20,7 +20,6 @@ public class GluonApplication extends Application {
 
     public static final String PRIMARY_VIEW = HOME_VIEW;
     public static final String SECONDARY_VIEW = "Secondary View";
-
     public static final String API_VIEW = "Api View";
 
     private final AppManager appManager = AppManager.initialize(this::postInit);
@@ -28,7 +27,7 @@ public class GluonApplication extends Application {
     @Override
     public void init() {
         appManager.addViewFactory(API_VIEW, () -> (View) new ApiView().getView());
-        appManager.addViewFactory(PRIMARY_VIEW, () -> (View) new ScrappingView().getView());
+        appManager.addViewFactory(PRIMARY_VIEW, () -> (View) new PrimaryView().getView());
         appManager.addViewFactory(SECONDARY_VIEW,()-> (View) new SecondaryView().getView());
 
         DrawerManager.buildDrawer(appManager);

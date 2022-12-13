@@ -24,7 +24,7 @@
                <graphic>
                   <ImageView fx:id="profile" fitHeight="63.0" fitWidth="79.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Controller/Views/icons/PikPng.com_orang-png_5154752.png" />
+                        <Image url="@../../../com/gluonapplication/views/icons/PikPng.com_orang-png_5154752.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -36,7 +36,7 @@
                <graphic>
                   <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Controller/Views/icons/PikPng.com_e-commerce-png_2804307.png" />
+                        <Image url="@../../../com/gluonapplication/views/icons/PikPng.com_e-commerce-png_2804307.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -45,7 +45,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Controller/Views/icons/PikPng.com_scrape-png_4132362.png" />
+                        <Image url="@../../../com/gluonapplication/views/icons/PikPng.com_scrape-png_4132362.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -54,7 +54,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Controller/Views/icons/PikPng.com_tech-circle-png_4864338.png" />
+                        <Image url="@../../../com/gluonapplication/views/icons/PikPng.com_tech-circle-png_4864338.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -63,7 +63,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Controller/Views/icons/PikPng.com_oracle-png_1411923.png" />
+                        <Image url="@../../../com/gluonapplication/views/icons/PikPng.com_oracle-png_1411923.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -72,7 +72,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Controller/Views/icons/PikPng.com_cell-phone-icon-png_1188611.png" />
+                        <Image url="@../../../com/gluonapplication/views/icons/PikPng.com_cell-phone-icon-png_1188611.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -81,7 +81,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Controller/Views/icons/PikPng.com_electronics-items-png_891664.png" />
+                        <Image url="@../../../com/gluonapplication/views/icons/PikPng.com_electronics-items-png_891664.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -90,7 +90,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Controller/Views/icons/PikPng.com_settings-gear-png_4940060.png" />
+                        <Image url="@../../../com/gluonapplication/views/icons/PikPng.com_settings-gear-png_4940060.png" />
                      </image>
                   </ImageView>
                </graphic>

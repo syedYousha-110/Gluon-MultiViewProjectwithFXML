@@ -1,8 +1,8 @@
 package com.gluonapplication.views;
 
-import com.gluonapplication.Controller.DarazSellerModel.GetRequest.*;
-import com.gluonapplication.Controller.Enum.Constants;
-import com.gluonapplication.Controller.TableModelData.*;
+import com.gluonapplication.Model.DarazSellerModel.GetRequest.*;
+import com.gluonapplication.Model.Enum.Constants;
+import com.gluonapplication.Model.TableModelData.*;
 import com.gluonhq.charm.glisten.animation.BounceInRightTransition;
 import com.gluonhq.charm.glisten.application.AppManager;
 import com.gluonhq.charm.glisten.control.AppBar;
@@ -10,7 +10,6 @@ import com.gluonhq.charm.glisten.control.FloatingActionButton;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
 
 
 import javafx.beans.binding.BooleanBinding;
@@ -24,7 +23,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 
-import javafx.scene.Node;
 import javafx.scene.control.*;
 
 import javafx.scene.layout.*;

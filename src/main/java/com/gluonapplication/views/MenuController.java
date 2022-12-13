@@ -1,7 +1,7 @@
 package com.gluonapplication.views;
 
-import com.gluonapplication.Controller.Enum.View;
-import com.gluonapplication.Controller.SceneChanger;
+import com.gluonapplication.Model.Enum.View;
+import com.gluonapplication.Model.SceneChanger;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -55,7 +55,7 @@ public class MenuController implements Initializable {
         Color color = Color.LIGHTGRAY;
         setGETRequest(new Button("GETRequest"));
         var btn = getGETRequest();
-        ImageView imageView =new ImageView("E:\\JavaFXApplication\\Gluon-MultiViewProjectwithFXML\\src\\main\\resources\\com\\gluonapplication\\Controller\\Views\\icons\\PikPng.com_scrape-png_4132362.png");
+        ImageView imageView =new ImageView("E:\\JavaFXApplication\\Gluon-MultiViewProjectwithFXML\\src\\main\\resources\\com\\gluonapplication\\Views\\icons\\PikPng.com_scrape-png_4132362.png");
         imageView.setPreserveRatio(true);
         btn.setGraphic(imageView);
         btn.graphicProperty().addListener((observable, oldValue, newValue) -> {
