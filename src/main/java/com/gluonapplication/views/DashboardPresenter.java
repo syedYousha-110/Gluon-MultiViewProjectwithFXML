@@ -1,6 +1,14 @@
 package com.gluonapplication.views;
 
 
+import com.gluonhq.charm.glisten.animation.BounceInRightTransition;
+import com.gluonhq.charm.glisten.application.AppManager;
+import com.gluonhq.charm.glisten.control.AppBar;
+import com.gluonhq.charm.glisten.control.FloatingActionButton;
+import com.gluonhq.charm.glisten.mvc.View;
+import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -10,13 +18,15 @@ import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 
-public class DashboardPresenter implements Initializable{
-
+public class DashboardPresenter{
+    @FXML
+    private View dashboard;
     @FXML
     private AreaChart<String,Number> AreaChart;
     @FXML
@@ -46,15 +56,23 @@ public class DashboardPresenter implements Initializable{
     private AnchorPane side_ankerPane;
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-       // setAreaChart();
+    public void initialize() {
+        dashboard.setShowTransitionFactory(BounceInRightTransition::new);
+        FloatingActionButton fb = new FloatingActionButton(MaterialDesignIcon.BACKSPACE.text, e->{
+            AppManager.getInstance().switchToPreviousView();
+        });
+        fb.showOn(dashboard);
+        dashboard.showingProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue){
+                AppBar appBar = AppManager.getInstance().getAppBar();
+                appBar.setTitle(new Label("dashBoard"));
+                appBar.setNavIcon(MaterialDesignIcon.MENU.button(e->{AppManager.getInstance().getDrawer().open();}));
+            }
+        });
+        //setAreaChart();
 
     }
   public void setAreaChart(){
-
       btn_areaChart.setOnAction(event -> {
           this.AreaChart.getCreateSymbols();
           AreaChart.setAnimated(true);

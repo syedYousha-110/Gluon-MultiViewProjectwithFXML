@@ -16,6 +16,8 @@
         <gluonfx.plugin.version>1.0.16</gluonfx.plugin.version>
         <javafx.plugin.version>0.0.8</javafx.plugin.version>
         <mainClassName>com.gluonapplication.GluonApplication</mainClassName>
+        <attach.extended.version>4.0.14</attach.extended.version>
+        <attach.extended.classifier>desktop</attach.extended.classifier>
     </properties>
 
     <dependencies>
@@ -74,6 +76,13 @@
             <artifactId>gson</artifactId>
             <version>2.10</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/svm -->
+        <dependency>
+            <groupId>org.graalvm.nativeimage</groupId>
+            <artifactId>svm</artifactId>
+            <version>22.3.0</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.graalvm/graal-sdk -->
     </dependencies>
 
@@ -82,6 +91,7 @@
             <id>Gluon</id>
             <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
         </repository>
+
     </repositories>
 
     <build>
@@ -110,7 +120,7 @@
                 <artifactId>gluonfx-maven-plugin</artifactId>
                 <version>${gluonfx.plugin.version}</version>
                 <configuration>
-                    <target/>
+                    <target>android</target>
                     <attachList>
                         <list>display</list>
                         <list>lifecycle</list>
@@ -118,9 +128,10 @@
                         <list>storage</list>
                     </attachList>
                     <reflectionList>
-                        <list>com.gluonapplication.views.ApiPresenter</list>
                         <list>com.gluonapplication.views.PrimaryPresenter</list>
-                        <list>com.gluonapplication.views.SecondaryPresenter</list>
+                        <list>com.gluonapplication.views.ApiPresenter</list>
+                        <list>com.gluonapplication.views.ScrappingPresenter</list>
+                        <list>com.gluonapplication.views.DashboardPresenter</list>
                     </reflectionList>
                     <mainClass>${mainClassName}</mainClass>
                 </configuration>
@@ -130,15 +141,10 @@
 
     <profiles>
         <profile>
-            <id>ios</id>
-            <properties>
-                <gluonfx.target>ios</gluonfx.target>
-            </properties>
-        </profile>
-        <profile>
             <id>android</id>
             <properties>
                 <gluonfx.target>android</gluonfx.target>
+                <attach.extended.classifier>android</attach.extended.classifier>
             </properties>
         </profile>
     </profiles>
