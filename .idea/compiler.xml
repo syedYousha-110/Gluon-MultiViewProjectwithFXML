@@ -9,8 +9,7 @@
         <module name="gluon-multiviewprojectwithfxml" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Gluon-MultiViewProjectwithFXML" target="1.5" />
+    <bytecodeTargetLevel target="19">
       <module name="gluon-multiviewprojectwithfxml" target="11" />
     </bytecodeTargetLevel>
   </component>

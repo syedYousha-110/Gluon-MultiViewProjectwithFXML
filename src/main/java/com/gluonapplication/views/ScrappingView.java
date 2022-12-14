@@ -2,5 +2,6 @@ package com.gluonapplication.views;
 
 import com.airhacks.afterburner.views.FXMLView;
 
-public class DashBoardView extends FXMLView {
+public class ScrappingView extends FXMLView {
+
 }

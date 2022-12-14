@@ -99,8 +99,8 @@ public class ApiPresenter {
 
     public void initialize() {
         api.setShowTransitionFactory(BounceInRightTransition::new);
-        FloatingActionButton fb = new FloatingActionButton(MaterialDesignIcon.EXIT_TO_APP.text, e->{
-
+        FloatingActionButton fb = new FloatingActionButton(MaterialDesignIcon.BACKSPACE.text, e->{
+            AppManager.getInstance().switchToPreviousView();
         });
         fb.showOn(api);
         api.showingProperty().addListener(((observable, oldValue, newValue) -> {

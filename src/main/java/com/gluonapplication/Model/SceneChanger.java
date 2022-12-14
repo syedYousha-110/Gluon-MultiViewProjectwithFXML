@@ -1,6 +1,6 @@
 package com.gluonapplication.Model;
 
-import com.gluonapplication.Model.Enum.View;
+import com.gluonapplication.Model.Enum.FXMLView;
 
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
@@ -30,7 +30,7 @@ import static javafx.scene.paint.Color.*;
 
 public class SceneChanger{
 
-    private static final Map<View,Parent> cache = new HashMap<>();
+    private static final Map<FXMLView,Parent> cache = new HashMap<>();
     private static Scene scene;
     private static final HBox H_BOXTitle = new HBox();
     private static final HBox H_BOX = new HBox();
@@ -90,7 +90,7 @@ public class SceneChanger{
         H_BOXTitle.getChildren().add(ExitButton);
 
         H_BOX.setBackground(Background.fill(color));
-        Parent Menu = FXMLLoader.load(Objects.requireNonNull(SceneChanger.class.getResource("ControllerView/"+View.MENU.getFileName())));
+        Parent Menu = FXMLLoader.load(Objects.requireNonNull(SceneChanger.class.getResource("ControllerView/"+ FXMLView.MENU.getFileName())));
         Pane sidePane = (Pane)Menu;
         sidePane.setMinWidth(300);
         sidePane.setMaxWidth(300);
@@ -103,7 +103,7 @@ public class SceneChanger{
         H_BOX.getChildren().addAll(SideView, scrollPaneForView);
         root.getChildren().add(0,H_BOXTitle);
         root.getChildren().add(1,H_BOX);
-        cache.put(View.MENU,sidePane);
+        cache.put(FXMLView.MENU,sidePane);
         scene.setRoot(root);
         setScene(scene);
 
@@ -111,21 +111,21 @@ public class SceneChanger{
     }
 
 
-    public static void switchTo(View view){
+    public static void switchTo(FXMLView FXMLView){
         if (scene==null){
             System.out.println("isScene : false");
             return;
         }
         try {
 
-            if (cache.containsKey(view))
+            if (cache.containsKey(FXMLView))
             {
-                var root= cache.get(view);
+                var root= cache.get(FXMLView);
                 scrollPaneForView.setContent(root);
                 scrollPaneForView.setBackground(Background.fill(color));
                 System.out.println("From Cache");
             }else {
-                Parent  View_fxml = FXMLLoader.load(Objects.requireNonNull(SceneChanger.class.getResource("ControllerView/"+view.getFileName())));
+                Parent  View_fxml = FXMLLoader.load(Objects.requireNonNull(SceneChanger.class.getResource("ControllerView/"+ FXMLView.getFileName())));
                 AnchorPane viewFxmlPane = (AnchorPane) View_fxml;
 
                 var widthProperty = viewFxmlPane.getPrefWidth();
@@ -134,7 +134,7 @@ public class SceneChanger{
                 viewFxmlPane.maxWidthProperty().bind(Bindings.when(scene.widthProperty().subtract(300).greaterThan(maxProperty)).then(H_BOX.widthProperty().subtract(300)).otherwise(maxProperty));
                 SceneChanger.colorPane.add(viewFxmlPane);
                 viewFxmlPane.backgroundProperty().setValue(Background.fill(color));
-                cache.put(view,View_fxml);
+                cache.put(FXMLView,View_fxml);
                 scrollPaneForView.setContent(View_fxml);
                 scrollPaneForView.setBackground(Background.fill(color));
                 System.out.println("Loaded into Cache");

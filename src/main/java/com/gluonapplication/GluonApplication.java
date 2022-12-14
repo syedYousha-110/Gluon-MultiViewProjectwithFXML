@@ -1,9 +1,8 @@
 package com.gluonapplication;
 
 
-import com.gluonapplication.views.ApiView;
-import com.gluonapplication.views.PrimaryView;
-import com.gluonapplication.views.SecondaryView;
+import com.gluonapplication.Controller.MenuView;
+import com.gluonapplication.views.*;
 import com.gluonhq.charm.glisten.application.AppManager;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.Swatch;
@@ -19,17 +18,18 @@ import static com.gluonhq.charm.glisten.application.AppManager.HOME_VIEW;
 public class GluonApplication extends Application {
 
     public static final String PRIMARY_VIEW = HOME_VIEW;
-    public static final String SECONDARY_VIEW = "Secondary View";
     public static final String API_VIEW = "Api View";
+    public static final String DASHBOARD_VIEW = "dashboard View";
+    public static final String SCRAPPING_VIEW = "Scrapping View";
 
     private final AppManager appManager = AppManager.initialize(this::postInit);
 
     @Override
     public void init() {
-        appManager.addViewFactory(API_VIEW, () -> (View) new ApiView().getView());
         appManager.addViewFactory(PRIMARY_VIEW, () -> (View) new PrimaryView().getView());
-        appManager.addViewFactory(SECONDARY_VIEW,()-> (View) new SecondaryView().getView());
-
+        appManager.addViewFactory(API_VIEW, () -> (View) new ApiView().getView());
+        appManager.addViewFactory(SCRAPPING_VIEW,()-> (View) new ScrappingView().getView());
+        appManager.addViewFactory(DASHBOARD_VIEW,()->(View) new DashboardView().getView());
         DrawerManager.buildDrawer(appManager);
     }
 
